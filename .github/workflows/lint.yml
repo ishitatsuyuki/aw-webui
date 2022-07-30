@@ -20,7 +20,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - uses: pnpm/action-setup@v2
+      with:
+        version: latest
     - name: Install
-      run: npm ci
+      run: pnpm i
     - name: Run linting
       run: make lint
